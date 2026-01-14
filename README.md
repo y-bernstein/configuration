@@ -10,9 +10,9 @@ The goal of this system is to:
 
 ---
 ## 0. Terminology
-- Template = **a templated configuration file your app needs (ex: .env, options.json, config.yaml etc)**
-- Vars file = **yaml file containing a list of variables that are rendered into the templates**
-- Environment = **combination of aws region + env, where your app runs (ex: us-dev, us-stg, us-prod, can-prod, au-dev etc)**
+- Template = a templated configuration file your app needs (ex: **.env, options.json, config.yaml etc**)
+- Vars file = *yaml* file containing a list of variables that are rendered into the templates
+- Environment = combination of aws region + env, where your app runs (ex: **us-dev, us-stg, us-prod, can-prod, au-dev etc**)
 
 ## 1. Core Concepts
 
