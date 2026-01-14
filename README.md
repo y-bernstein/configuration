@@ -65,20 +65,6 @@ Variables are merged in the following order:
 3. `environments/<env>/vars.yaml`
 4. `environments/<env>/services/<service>/vars.yaml`
 
-Later layers **override** earlier layers.
-
-### Mermaid: Variable Precedence Flow
-
-```mermaid
-flowchart TD
-    A[globals/vars.yaml]
-    B[globals/services/service/vars.yaml]
-    C[environments/env/vars.yaml]
-    D[environments/env/services/service/vars.yaml]
-    E[Final merged variables]
-
-    A --> B --> C --> D --> E
-
 
 ⸻
 
