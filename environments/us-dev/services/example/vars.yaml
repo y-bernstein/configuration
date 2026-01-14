@@ -3,4 +3,4 @@ logging:
   file: /var/log/example_service.log
 db:
   user: example_user_dev
-  password: db_password_dev # the name of the secret in secret manager
+  # password: db_password_dev # the name of the secret in secret manager
