@@ -36,7 +36,7 @@ global --> global/service --> environment --> environment/service
 
 ### 2. Repository Structure
 
-[globals/
+```globals/
 	vars.yaml                      # global defaults (all services, all envs)
 
 services/
@@ -51,7 +51,7 @@ environments/
 		services/
   			example/               # service name
     			vars.yaml          # env-specific service overrides
-]
+```
 
 Only `vars.yaml` files vary by environment.  
 `config.yaml` exists **only once per service**.
