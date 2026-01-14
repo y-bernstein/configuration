@@ -1,0 +1,13 @@
+config:
+  app_name: ExampleService
+  admin_user: admin_user
+  logging:
+    level: {{ logging.level }}
+    file: {{ logging.file | default('/var/log/example_service_default.log') }}
+db:
+  host: db.example.com
+  port: 5432
+  db_name: example_db
+  user: {{ db.user | default('example_user') }}
+  password: {{ secret('db.password') }} # telling engine that this is a secret, the actual secret name is in the var file under db.password
+  

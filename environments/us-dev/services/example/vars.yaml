@@ -1,0 +1,6 @@
+logging:
+  level: DEBUG
+  file: /var/log/example_service.log
+db:
+  user: example_user_dev
+  password: {{ secret('db_password_dev') }}

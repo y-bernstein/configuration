@@ -1,0 +1,12 @@
+globals
+vars.yaml
+services:
+  gateway:
+    config.yaml
+    vars.yaml
+environments:
+  us-prod:
+    vars.yaml
+    services:
+      gateway:
+        vars.yaml
