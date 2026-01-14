@@ -102,14 +102,16 @@ Templates are written using Jinja2.
 
 **Example**: `globals/services/example/config.yaml`
 
-`server:
+`
+server:
   port: {{ service.port }}
   log_level: {{ logging.level }}
 
 database:
   host: {{ db.host }}
   user: {{ db.user }}
-  password: "{{ secret(db.password_secret) }}"`
+  password: "{{ secret(db.password_secret) }}"
+  `
 
 **Important rules**:
 	•	Missing variables fail the render
