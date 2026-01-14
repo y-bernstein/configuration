@@ -36,7 +36,8 @@ global --> global/service --> environment --> environment/service
 
 ### 2. Repository Structure
 
-```globals/
+```
+globals/
 	vars.yaml                      # global defaults (all services, all envs)
 
 services/
@@ -80,19 +81,25 @@ When merging variables:
 **Example**:
 
 **globals/vars.yaml**
-`logging:
+```
+logging:
   level: INFO
-  outputs: [stdout]`
+  outputs: [stdout]
+```
 
 **environments/us-prod/vars.yaml**
-`logging:
-  level: WARN`
+```
+logging:
+  level: WARN
+```
 
 **Result:**
 
-`logging:
+```
+logging:
   level: WARN
-  outputs: [stdout]`
+  outputs: [stdout]
+```
 
 ⸻
 
@@ -102,7 +109,7 @@ Templates are written using Jinja2.
 
 **Example**: `globals/services/example/config.yaml`
 
-`
+```
 server:
   port: {{ service.port }}
   log_level: {{ logging.level }}
@@ -111,7 +118,7 @@ database:
   host: {{ db.host }}
   user: {{ db.user }}
   password: "{{ secret(db.password_secret) }}"
-  `
+```
 
 **Important rules**:
 	•	Missing variables fail the render
@@ -127,24 +134,28 @@ database:
 Used for defaults shared across all services and environments.
 
 **globals/vars.yaml**
-`logging:
+```
+logging:
   level: INFO
 
 service:
-  port: 8080`
+  port: 8080
+```
 
 **Service Variables**
 
 Defaults for a specific service across all environments.
 
 **globals/services/example/vars.yaml**
-`service:
+```
+service:
   port: 9000
 
 db:
   host: gateway-db.internal
   user: gateway
-  password_secret: /config/example/db_password`
+  password_secret: /config/example/db_password
+```
 
 
 ⸻
@@ -154,11 +165,13 @@ db:
 Overrides shared across all services in one environment.
 
 **environments/us-prod/vars.yaml**
-`logging:
+```
+logging:
   level: WARN
 
 monitoring:
-  enabled: true`
+  enabled: true
+```
 
 ⸻
 
@@ -167,13 +180,14 @@ monitoring:
 Used when a service has a unique parameter and it is unique in a given environment
 
 **environments/us-prod/services/example/vars.yaml**
-`service:
+```
+service:
   port: 9443
 
 db:
   host: gateway-db.us-prod.internal
-  name: db_only_this_service_uses`
-
+  name: db_only_this_service_uses
+```
 
 ⸻
 
