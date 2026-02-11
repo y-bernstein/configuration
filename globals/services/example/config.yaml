@@ -1,13 +1,67 @@
-config:
-  app_name: ExampleService
-  admin_user: admin_user
-  logging:
-    level: {{ logging.level }}
-    file: {{ logging.file | default('/var/log/example_service_default.log') }}
-db:
-  host: db.example.com
-  port: 5432
-  db_name: example_db
-  user: {{ db.user | default('example_user') }}
-  {# password: {{ secret('db.password') }} # telling engine that this is a secret, the actual secret name is in the var file under db.password #}
-  
+{
+  "PORT": {{ port }},
+  "download_export_bucket": "{{ download_export_bucket }}",
+  "upload_bucket": "{{ upload_bucket }}",
+  "generative_upload_bucket": "{{ generative_upload_bucket }}",
+  "form_bucket": "{{ form_bucket }}",
+  "document_bucket": "{{ document_bucket }}",
+  "generated_output_bucket": "{{ generated_output_bucket }}",
+  "training_data_bucket": "{{ training_data_bucket }}",
+  "email_notification_queue": "{{ email_notification_queue }}",
+  "document_workflow_parameter": "{{ document_workflow_parameter }}",
+  "timeline_config_parameter": "{{ timeline_config_parameter }}",
+  "secondary_tags": "{{ secondary_tags }}",
+  "system_jwt_secret_name": "{{ system_jwt_secret_name }}",
+  "prism_service_url": "{{ prism_service_url }}",
+  "demo_case_config_parameter": "{{ demo_case_config_parameter }}",
+  "ELASTIC_APM_SERVICE_NAME": "{{ elastic_apm_service_name }}",
+  "ELASTIC_APM_SERVER_URL": "{{ elastic_apm_server_url }}",
+  "pubsub_sns_topic": "{{ pubsub_sns_topic }}",
+  "pubsub_max_concurrent_events": "{{ pubsub_max_concurrent_events }}",
+  "pubsub_polling_interval_ms": "{{ pubsub_polling_interval_ms }}",
+  "pubsub_healthcheck_interval_ms": "{{ pubsub_healthcheck_interval_ms }}",
+  "pubsub_eventbus_name": "{{ pubsub_eventbus_name }}",
+  "secrets": {
+    "/supio/stg/gemini_api_key": "{{ secret('/supio/stg/gemini_api_key') }}",
+    "jwt": "{{ secret('jwt') }}",
+    "aniline_api_key_prd": "{{ secret('aniline_api_key_prd') }}",
+    "aniline_user_api_key_prd": "{{ secret('aniline_user_api_key_prd') }}",
+    "sellersource_header_key": "{{ secret('sellersource_header_key') }}",
+    "aniline_email_api_key_prd": "{{ secret('aniline_email_api_key_prd') }}",
+    "aniline_task_api_key_prd": "{{ secret('aniline_task_api_key_prd') }}",
+    "ui_case_api_key_prd": "{{ secret('ui_case_api_key_prd') }}",
+    "ui_history_api_key_prd": "{{ secret('ui_history_api_key_prd') }}",
+    "filethis_api": "{{ secret('filethis_api') }}",
+    "equity_urls_stg": "{{ secret('equity_urls_stg') }}",
+    "hellosign_prd": "{{ secret('hellosign_prd') }}",
+    "output_bucket_names_prd": "{{ secret('output_bucket_names_prd') }}",
+    "clio_app": "{{ secret('clio_app') }}",
+    "salesforce_app": "{{ secret('salesforce_app') }}",
+    "yodlee_development": "{{ secret('yodlee_development') }}",
+    "stripe": "{{ secret('stripe') }}",
+    "sharefile": "{{ secret('sharefile') }}",
+    "openai_api_prd": "{{ secret('openai_api_prd') }}",
+    "openai_gen_key_prd": "{{ secret('openai_gen_key_prd') }}",
+    "claude_api_prd": "{{ secret('claude_api_prd') }}",
+    "magic_link_prd": "{{ secret('magic_link_prd') }}",
+    "azure_api_prod": "{{ secret('azure_api_prod') }}",
+    "pspdfkit_prod": "{{ secret('pspdfkit_prod') }}",
+    "connector_prod": "{{ secret('connector_prod') }}",
+    "models_postgres_stg": "{{ secret('models_postgres_stg') }}",
+    "slack_prod": "{{ secret('slack_prod') }}",
+    "airtable_document_issues": "{{ secret('airtable_document_issues') }}",
+    "auth0_prod": "{{ secret('auth0_prod') }}",
+    "rag_service_stg": "{{ secret('rag_service_stg') }}",
+    "quickdex_service_stg": "{{ secret('quickdex_service_stg') }}",
+    "mass_torts_service_stg": "{{ secret('mass_torts_service_stg') }}",
+    "case_signals_service_stg": "{{ secret('case_signals_service_stg') }}",
+    "supio_stg_unified_env_postgres": "{{ secret('supio_stg_unified_env_postgres') }}",
+    "/supio/stg/flow-sheets/auth-key": "{{ secret('/supio/stg/flow-sheets/auth-key') }}",
+    "/supio/stg/llm-workflows": "{{ secret('/supio/stg/llm-workflows') }}",
+    "agents_service_stg": "{{ secret('agents_service_stg') }}",
+    "intercom_stg": "{{ secret('intercom_stg') }}",
+    "/supio/stg/elasticache/valkey/main/credentials": "{{ secret('/supio/stg/elasticache/valkey/main/credentials') }}",
+    "prism_service_stg": "{{ secret('prism_service_stg') }}",
+    "ELASTIC_APM_API_KEY": "{{ secret('ELASTIC_APM_API_KEY') }}"
+  }
+}
