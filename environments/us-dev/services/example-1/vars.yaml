@@ -1,0 +1,17 @@
+http_port: 3003
+imports_service_url: https://e26frl0fl7.execute-api.us-west-2.amazonaws.com/stg
+docxgenerator_service_url: https://dg.supio.com/api/v1
+download_export_bucket: stg.equity-export
+statics_bucket: prd.equity-assets
+upload_bucket: stg.equity-upload
+document_bucket: stg.equity-docs
+form_bucket: stg.equity-forms
+template_bucket: stg.company-config
+import_upload_bucket: stg.equity-import
+api_user_header: x-axmt-user-id
+api_company_header: x-axmt-company-id
+generated_output_bucket: stg.equity-outputs
+automations_form_updates_sqs_url: https://sqs.us-west-2.amazonaws.com/281657013469/Automations_FormUpdates-stg
+system_jwt_secret_name: system_jwt_stg
+supio_cloudfront_training_data_config_secret_name: /supio/cloudfront/config/equity-training-data
+metrics_sample_rate: '0.1'
